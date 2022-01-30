@@ -41,7 +41,7 @@ export class ResourceClient<T extends ResponseRoot> {
     });
   }
 
-  async get(query: string, options?: { storefront?: string; languageTag?: string; limit?: number, offset?: number }): Promise<T> {
+  async get(query: string, options?: { storefront?: string; languageTag?: string; limit?: integer, offset?: string }): Promise<T> {
     const storefront = options?.storefront || this.configuration.defaultStorefront;
 
     if (!storefront) {

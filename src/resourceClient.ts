@@ -10,7 +10,7 @@ import { Error } from './serverTypes/error';
 interface Parameters {
   l?: string;
   term?: string;
-  limit?: integer;
+  limit?: string;
   offset?: string;
 }
 
@@ -41,7 +41,7 @@ export class ResourceClient<T extends ResponseRoot> {
     });
   }
 
-  async get(query: string, options?: { storefront?: string; languageTag?: string; limit?: integer, offset?: string }): Promise<T> {
+  async get(query: string, options?: { storefront?: string; languageTag?: string; limit?: string, offset?: string }): Promise<T> {
     const storefront = options?.storefront || this.configuration.defaultStorefront;
 
     if (!storefront) {

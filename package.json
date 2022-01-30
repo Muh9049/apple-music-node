@@ -1,13 +1,12 @@
 {
-  "name": "@yujinakayama/apple-music",
-  "version": "0.4.0",
+  "name": "@muhimur/apple-music",
+  "version": "0.4.4",
   "description": "Apple Music API Client for Node.js",
   "main": "dist/index.js",
   "scripts": {
     "build": "tsc",
     "format": "prettier --write 'src/**/*.ts'",
     "prepublishOnly": "npm run build",
-    "publish": "npm publish --access public",
     "test": "jest"
   },
   "homepage": "https://github.com/yujinakayama/apple-music-node",
@@ -30,5 +29,13 @@
   },
   "dependencies": {
     "axios": "^0.21.1"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Muh9049/apple-music-node.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Muh9049/apple-music-node/issues"
+  },
+  "types": "./dist\\index.d.ts"
 }

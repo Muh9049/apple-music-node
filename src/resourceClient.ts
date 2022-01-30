@@ -10,8 +10,8 @@ import { Error } from './serverTypes/error';
 interface Parameters {
   l?: string;
   term?: string;
-  limit?: number;
-  offset?: number;
+  limit?: integer;
+  offset?: string;
 }
 
 export class ResourceClient<T extends ResponseRoot> {
@@ -51,7 +51,8 @@ export class ResourceClient<T extends ResponseRoot> {
     const url = buildRequestUrl(this.resourceName, storefront, query);;
 
     const params: Parameters = {
-      l: options?.languageTag || this.configuration.defaultLanguageTag
+      l: options?.languageTag || this.configuration.defaultLanguageTag,
+      limit: options?.limit || 5,
     };
 
     if (this.resourceName === 'search') params.term = query;
